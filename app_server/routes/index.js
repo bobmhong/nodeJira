@@ -7,6 +7,7 @@ var Cookies = require( "cookies" );
 router.get('/', function(req, res, next) {
   var cookies = new Cookies(req, res);
   var mySession = cookies.get('JSESSIONID');
+  //var mySession;
 
   console.log('JSESSIONID:' + mySession);
 
@@ -32,7 +33,16 @@ router.get('/login/', ctrlLogin.loginget);
 /* Process Login Request */
 router.post('/login/', ctrlLogin.loginpost);
 
-/* Logout Request */
-// router.delete('/login/', ctrlLogin.logindelete);
+/* View Request */
+router.get('/view/', ctrlLogin.view);
 
+/* Logout Request */
+router.get('/delete/', ctrlLogin.logout);
+
+/*router.get('/delete/', function(req, res, next) {
+  
+  console.log('Logging out...');
+
+});
+*/
 module.exports = router;
