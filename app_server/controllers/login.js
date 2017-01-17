@@ -6,7 +6,7 @@ var viewurl = jirahost + "/rest/api/2/search";
 var options_proxy = {
     proxy: {
         host: "127.0.0.1",
-        port: 5555
+        port: 8080
     }
 };
 
